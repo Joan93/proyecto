@@ -20,4 +20,7 @@ Acceso api docs
 ```
 mvn spring-boot:run
 ```
-
+## Run Unit Tests
+```
+mvn test
+```
