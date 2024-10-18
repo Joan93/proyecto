@@ -15,10 +15,10 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
-@Tag(name = "Sample API", description = "Sample operations for demonstration")
 @RestController
 @RequestMapping("/v1")
 @RequiredArgsConstructor
+@Tag(name = "Price Rest Adapter", description = "Contains the prices operations")
 public class PriceRestAdapter {
 
     private final PriceUseCase priceUseCase;
@@ -26,10 +26,8 @@ public class PriceRestAdapter {
     private final ModelMapper mapper;
 
     @GetMapping(value = "/prices")
-    @Operation(summary = "Say Hello", description = "Returns a greeting message")
-    public ResponseEntity<PriceResponse> getPrice(@RequestParam String date,
-                                                  @RequestParam Integer productId,
-                                                  @RequestParam Integer brandId){
+    @Operation(summary = "Obtains the price of a product by: productId, brandId, and date", description = "Returns information of product and the price")
+    public ResponseEntity<PriceResponse> getPrice(@RequestParam String date, @RequestParam Integer productId, @RequestParam Integer brandId){
         var price = priceUseCase.getPrice(date, productId, brandId);
         return new ResponseEntity<>(mapper.map(price, PriceResponse.class), HttpStatus.OK);
     }

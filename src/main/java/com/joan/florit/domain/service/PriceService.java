@@ -1,7 +1,6 @@
 package com.joan.florit.domain.service;
 
 import java.util.Comparator;
-import java.util.Date;
 
 import com.joan.florit.domain.exception.PriceNotFoundException;
 import com.joan.florit.domain.model.Price;

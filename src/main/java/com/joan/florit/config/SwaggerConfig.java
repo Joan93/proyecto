@@ -13,7 +13,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
 	return new OpenAPI()
 		.info(new Info()
-			.title("Prices API")
+			.title("Prices Rest API")
 			.version("1.0")
 			.description("Prices API with Swagger/OpenAPI integration")
 			.contact(new Contact()
