@@ -23,7 +23,7 @@ public class BeanConfiguration {
     }
     
     @Bean
-    public PricePersistenceAdapter productPersistenceAdapter(PriceRepository priceRepository, PriceMapper priceMapper) {
+    public PricePersistenceAdapter pricePersistenceAdapter(PriceRepository priceRepository, PriceMapper priceMapper) {
         return new PricePersistenceAdapter(priceRepository, priceMapper);
     }
 
