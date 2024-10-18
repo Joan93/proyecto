@@ -18,7 +18,7 @@ public class PriceService implements PriceUseCase {
     @Override
     public Price getPrice(String date, Integer productId, Integer brandId) {
 
-        var prices = priceOutputPort.getPricesByParams(brandId, productId);
+        var prices = priceOutputPort.getPricesByParams(date, brandId, productId);
 
         return prices.stream() //
                 .sorted(Comparator.comparing(Price::getPriority).reversed())//
