@@ -15,13 +15,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PriceResponse {
-    private Long id;
+
+    private Integer productId;
     private Integer brandId;
+    private Integer priceList;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private Integer priceList;
-    private Integer productId;
-    private Integer priority;
     private BigDecimal price;
     private String currency;
+
 }

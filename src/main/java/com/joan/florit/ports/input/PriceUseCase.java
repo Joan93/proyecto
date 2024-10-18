@@ -7,6 +7,6 @@ import com.joan.florit.domain.model.Price;
 
 public interface PriceUseCase {
    
-    Price getPrice(Date date, Integer productId, Integer brandId);
+    Price getPrice(String date, Integer productId, Integer brandId);
     
 }
