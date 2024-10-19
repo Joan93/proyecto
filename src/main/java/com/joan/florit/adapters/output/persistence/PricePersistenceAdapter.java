@@ -21,13 +21,15 @@ public class PricePersistenceAdapter implements PriceOutputPort {
     public List<Price> getPricesByParams(String date, Integer brandId, Integer productId) {
 
         var dateTime = LocalDateTime.parse(date);
-       var priceEntities = priceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(brandId, productId, dateTime, dateTime);
+        var priceEntities = priceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(brandId, productId, dateTime, dateTime);
 
-       if(priceEntities.isEmpty()){
+        if (priceEntities.isEmpty()) {
            return List.of();
-       }
+        }
 
-       return priceEntities.stream().map(entity -> this.priceMapper.toDomain(entity)).toList();
+        return priceEntities.stream()//
+                .map(entity -> this.priceMapper.toDomain(entity))//
+                .toList();
     }
 
 }

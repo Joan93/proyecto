@@ -11,10 +11,13 @@ Acceso al Swagger:
 
 > [Swagger](http://localhost:8080/swagger-ui/index.html) 
 
-Acceso api docs
+Acceso api docs:
 
 > [Api Docs](http://localhost:8080/v1/api-docs)
 
+Endpoint servicio:
+
+> [GET Prices by params](http://localhost:8080/v1/prices)
 
 ## Run Spring Boot application
 ```

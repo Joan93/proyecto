@@ -1,14 +1,13 @@
 package com.joan.florit.domain.service;
 
-import static org.mockito.MockitoAnnotations.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.joan.florit.domain.exception.PriceNotFoundException;
 import com.joan.florit.domain.model.Price;
@@ -17,6 +16,7 @@ import com.joan.florit.ports.output.PriceOutputPort;
 import java.util.Collections;
 import java.util.List;
 
+@ExtendWith(MockitoExtension.class)
 public class PriceServiceTest {
 
     @Mock
@@ -25,24 +25,21 @@ public class PriceServiceTest {
     @InjectMocks
     private PriceService priceService;
 
-    @BeforeEach
-    public void setUp() {
-        openMocks(this);
-    }
-
     @Test
-    public void testGetPrice_Success() {
+    public void getPriceSuccess() {
 
         var date = "2020-06-14T16:00:00";
         var productId = 35455;
         var brandId = 1;
 
+        // first price with priority 0
         var price1 = Price.builder()//
                 .brandId(1)//
                 .productId(35455)//
                 .priority(0)//
                 .build();
 
+        // second price with priority 1
         var price2 = Price.builder()//
                 .brandId(1)//
                 .productId(35455)//
@@ -53,11 +50,12 @@ public class PriceServiceTest {
 
         var result = priceService.getPrice(date, productId, brandId);
 
+        // the result contains the second price
         assertEquals(price2, result);
     }
 
     @Test
-    public void testGetPrice_PriceNotFound() {
+    public void getPriceNotFound() {
 
         var date = "2024-10-10";
         var productId = 1;

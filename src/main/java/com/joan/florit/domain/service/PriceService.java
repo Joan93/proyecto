@@ -20,9 +20,9 @@ public class PriceService implements PriceUseCase {
         var prices = priceOutputPort.getPricesByParams(date, brandId, productId);
 
         return prices.stream() //
-                .sorted(Comparator.comparing(Price::getPriority).reversed())//
+                .sorted(Comparator.comparing(Price::getPriority).reversed()) //
                 .findFirst() //
-                .orElseThrow(() -> new PriceNotFoundException("Price not found"));
+                .orElseThrow(() -> new PriceNotFoundException("Error price not found"));
     }
 
 }
