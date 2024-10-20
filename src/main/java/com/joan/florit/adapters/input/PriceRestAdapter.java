@@ -16,7 +16,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping(value = "/v1", produces = "application/json", consumes = "application/json")
+@RequestMapping(value = "/v1")
 @RequiredArgsConstructor
 @Tag(name = "Price Rest Adapter", description = "Contains the prices operations")
 public class PriceRestAdapter {
