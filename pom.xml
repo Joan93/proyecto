@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.joan.florit</groupId>
-	<artifactId>spring-boot-jpa-h2</artifactId>
+	<artifactId>my-spring-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>prueba</name>
 	<description>Hexagonal Architecture API</description>
@@ -96,10 +96,7 @@
 			<version>7.11.0</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest</artifactId>
-		</dependency>
+
 
 	</dependencies>
 
