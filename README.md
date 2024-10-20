@@ -35,7 +35,7 @@ mvn test
 
 **Cucumber Test:** price.feature which runs the PriceSteps.
 
-Example of a CUrl request (for Postman):
+Example of a cURL request (for Postman):
 
 ```
 curl --request GET \
