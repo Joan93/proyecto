@@ -1,4 +1,4 @@
-package com.joan.florit.adapters;
+package com.joan.florit.infraestructure;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import com.joan.florit.adapters.output.persistence.PricePersistenceAdapter;
-import com.joan.florit.adapters.output.persistence.entity.PriceEntity;
-import com.joan.florit.adapters.output.persistence.mapper.PriceMapper;
-import com.joan.florit.adapters.output.persistence.repository.PriceRepository;
+import com.joan.florit.infraestructure.output.persistence.PricePersistenceAdapter;
+import com.joan.florit.infraestructure.output.persistence.entity.PriceEntity;
+import com.joan.florit.infraestructure.output.persistence.mapper.PriceMapper;
+import com.joan.florit.infraestructure.output.persistence.repository.PriceRepository;
 import com.joan.florit.domain.model.Price;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;

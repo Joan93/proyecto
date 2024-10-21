@@ -11,7 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.joan.florit.domain.exception.PriceNotFoundException;
 import com.joan.florit.domain.model.Price;
-import com.joan.florit.ports.output.PriceOutputPort;
+import com.joan.florit.application.output.PriceOutputPort;
 
 import java.util.Collections;
 import java.util.List;

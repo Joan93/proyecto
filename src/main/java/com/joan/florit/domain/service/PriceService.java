@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 import com.joan.florit.domain.exception.PriceNotFoundException;
 import com.joan.florit.domain.model.Price;
-import com.joan.florit.ports.input.PriceUseCase;
-import com.joan.florit.ports.output.PriceOutputPort;
+import com.joan.florit.application.input.PriceUseCase;
+import com.joan.florit.application.output.PriceOutputPort;
 
 import lombok.AllArgsConstructor;
 

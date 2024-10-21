@@ -1,4 +1,4 @@
-package com.joan.florit.adapters.input;
+package com.joan.florit.infraestructure.input;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.joan.florit.adapters.input.rest.data.response.PriceResponse;
-import com.joan.florit.ports.input.PriceUseCase;
+import com.joan.florit.infraestructure.input.rest.data.response.PriceResponse;
+import com.joan.florit.application.input.PriceUseCase;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

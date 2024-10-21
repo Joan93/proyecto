@@ -1,4 +1,4 @@
-package com.joan.florit.adapters.input.rest.data.response;
+package com.joan.florit.infraestructure.input.rest.data.response;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

@@ -1,6 +1,7 @@
-# Prueba técnica Joan Florit
+# Technical test Joan Florit
 
 This is an example of a Java application with Spring using a hexagonal architecture and a database H2.
+
 The database model is created using the _PriceEntity_, and _data.sql_ for inserting the prices.
 
 To run the application, we have the following class:  _PriceApplication_
@@ -55,3 +56,17 @@ docker build -t my-spring-app-0.0.1-SNAPSHOT.jar
 ```
 docker run -p 8080:8080 my-spring-app-0.0.1-SNAPSHOT.jar 
 ```
+
+## Explanation about hexagonal architecture API
+
+The main idea behind this architecture is to isolate domain logic from external components when designing software applications.
+
+We have the three layers: application, domain and infrastructure:
+
+<img src="https://miro.medium.com/max/640/1*N7tlxqOLXiPLy_yrb0q7-Q.png"/>
+
+Layers of hexagonal architecture:
+- Application: will contain the ports, which are interfaces that allow inbound or outbound flow.
+- Infrastructure: represents the outer part of the hexagonal architecture through adapters.
+- Domain: the center of the system. It handles the business logic and represents the application core.  
+

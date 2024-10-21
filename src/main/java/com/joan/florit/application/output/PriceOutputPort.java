@@ -1,4 +1,4 @@
-package com.joan.florit.ports.output;
+package com.joan.florit.application.output;
 
 import java.util.List;
 

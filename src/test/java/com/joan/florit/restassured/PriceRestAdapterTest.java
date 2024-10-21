@@ -18,10 +18,10 @@ import static org.mockito.Mockito.when;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import com.joan.florit.adapters.input.PriceRestAdapter;
-import com.joan.florit.adapters.input.rest.data.response.PriceResponse;
+import com.joan.florit.infraestructure.input.PriceRestAdapter;
+import com.joan.florit.infraestructure.input.rest.data.response.PriceResponse;
 import com.joan.florit.domain.model.Price;
-import com.joan.florit.ports.input.PriceUseCase;
+import com.joan.florit.application.input.PriceUseCase;
 
 import jakarta.annotation.PostConstruct;
 

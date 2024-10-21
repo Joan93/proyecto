@@ -1,4 +1,4 @@
-package com.joan.florit.adapters.output.persistence.entity;
+package com.joan.florit.infraestructure.output.persistence.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

@@ -1,12 +1,12 @@
-package com.joan.florit.adapters.output.persistence;
+package com.joan.florit.infraestructure.output.persistence;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.joan.florit.adapters.output.persistence.mapper.PriceMapper;
-import com.joan.florit.adapters.output.persistence.repository.PriceRepository;
+import com.joan.florit.infraestructure.output.persistence.mapper.PriceMapper;
+import com.joan.florit.infraestructure.output.persistence.repository.PriceRepository;
 import com.joan.florit.domain.model.Price;
-import com.joan.florit.ports.output.PriceOutputPort;
+import com.joan.florit.application.output.PriceOutputPort;
 
 import lombok.RequiredArgsConstructor;
 

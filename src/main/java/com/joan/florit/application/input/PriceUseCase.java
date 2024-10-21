@@ -1,4 +1,4 @@
-package com.joan.florit.ports.input;
+package com.joan.florit.application.input;
 
 import java.time.LocalDateTime;
 import java.util.Date;
