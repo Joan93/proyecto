@@ -13,6 +13,7 @@ import com.joan.florit.domain.exception.PriceNotFoundException;
 import com.joan.florit.domain.model.Price;
 import com.joan.florit.application.output.PriceOutputPort;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class PriceServiceTest {
     @Test
     public void getPriceSuccess() {
 
-        var date = "2020-06-14T16:00:00";
+        var date = ("2020-06-14T16:00:00");
         var productId = 35455;
         var brandId = 1;
 
@@ -46,7 +47,7 @@ public class PriceServiceTest {
                 .priority(1)//
                 .build(); //
 
-        when(priceOutputPort.getPricesByParams(date, brandId, productId)).thenReturn(List.of(price1, price2));
+        when(priceOutputPort.getPricesByParams(LocalDateTime.parse(date), brandId, productId)).thenReturn(List.of(price1, price2));
 
         var result = priceService.getPrice(date, productId, brandId);
 
@@ -57,11 +58,11 @@ public class PriceServiceTest {
     @Test
     public void getPriceNotFound() {
 
-        var date = "2024-10-10";
+        var date = "2024-10-10T10:00:00";
         var productId = 1;
         var brandId = 1;
 
-        when(priceOutputPort.getPricesByParams(date, brandId, productId)).thenReturn(Collections.emptyList());
+        when(priceOutputPort.getPricesByParams(LocalDateTime.parse(date), brandId, productId)).thenReturn(Collections.emptyList());
 
         assertThrows(PriceNotFoundException.class, () -> priceService.getPrice(date, productId, brandId));
     }

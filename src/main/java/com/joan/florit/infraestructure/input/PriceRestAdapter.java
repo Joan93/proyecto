@@ -26,7 +26,9 @@ public class PriceRestAdapter {
 
     @GetMapping(value = "/prices", produces = "application/json")
     @Operation(summary = "Obtains the price of a product by: productId, brandId, and date", description = "Returns information of product and the price")
-    public ResponseEntity<PriceResponse> getPrice(@RequestParam String date, @RequestParam Integer productId, @RequestParam Integer brandId) {
+    public ResponseEntity<PriceResponse> getPrice(@RequestParam(name = "date") String date, //
+                                                  @RequestParam(name = "productId", required = false) Integer productId, //
+                                                  @RequestParam(name = "brandId", required = false) Integer brandId) {
         var price = priceUseCase.getPrice(date, productId, brandId);
         return new ResponseEntity<>(mapper.map(price, PriceResponse.class), HttpStatus.OK);
     }

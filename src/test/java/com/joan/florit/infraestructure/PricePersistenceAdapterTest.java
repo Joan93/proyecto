@@ -36,14 +36,13 @@ public class PricePersistenceAdapterTest {
     void testGetPricesByParams_withNoResults() {
 
         String date = "2024-10-18T10:00:00";
-        LocalDateTime dateTime = LocalDateTime.parse(date);
         Integer brandId = 1;
         Integer productId = 1;
 
         when(priceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(
-                brandId, productId, dateTime, dateTime)).thenReturn(Collections.emptyList());
+                brandId, productId, LocalDateTime.parse(date), LocalDateTime.parse(date))).thenReturn(Collections.emptyList());
 
-        List<Price> result = pricePersistenceAdapter.getPricesByParams(date, brandId, productId);
+        List<Price> result = pricePersistenceAdapter.getPricesByParams(LocalDateTime.parse(date), brandId, productId);
 
         assertTrue(result.isEmpty(), "The result should be empty");
     }
@@ -64,7 +63,7 @@ public class PricePersistenceAdapterTest {
         Price price = new Price();
         when(priceMapper.toDomain(priceEntity)).thenReturn(price);
 
-        List<Price> result = pricePersistenceAdapter.getPricesByParams(date, brandId, productId);
+        List<Price> result = pricePersistenceAdapter.getPricesByParams(dateTime, brandId, productId);
 
         assertFalse(result.isEmpty(), "The result should not be empty");
         assertEquals(1, result.size(), "The result should contain one element");

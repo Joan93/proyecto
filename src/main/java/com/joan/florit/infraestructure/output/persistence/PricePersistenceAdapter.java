@@ -3,6 +3,7 @@ package com.joan.florit.infraestructure.output.persistence;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.joan.florit.domain.exception.PriceNotFoundException;
 import com.joan.florit.infraestructure.output.persistence.mapper.PriceMapper;
 import com.joan.florit.infraestructure.output.persistence.repository.PriceRepository;
 import com.joan.florit.domain.model.Price;
@@ -18,10 +19,9 @@ public class PricePersistenceAdapter implements PriceOutputPort {
     private final PriceMapper priceMapper;
 
     @Override
-    public List<Price> getPricesByParams(String date, Integer brandId, Integer productId) {
+    public List<Price> getPricesByParams(LocalDateTime date, Integer brandId, Integer productId) {
 
-        var dateTime = LocalDateTime.parse(date);
-        var priceEntities = priceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(brandId, productId, dateTime, dateTime);
+        var priceEntities = priceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(brandId, productId, date, date);
 
         if (priceEntities.isEmpty()) {
            return List.of();
