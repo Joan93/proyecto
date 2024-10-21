@@ -40,12 +40,28 @@ mvn test
 
 **Cucumber Test:** price.feature which runs the PriceSteps.
 
-Example of a cURL request (for Postman):
-
+**Postman:** Example of a cURL request:
 ```
 curl --request GET \
 --url 'http://localhost:8080/v1/prices?date=2020-06-16T21:00:00&productId=35455&brandId=1'
 ```
+
+## Explanation about hexagonal architecture API
+
+The main idea behind this architecture is to isolate domain logic from external components when designing software applications.
+
+We have the three layers: application, domain and infrastructure:
+
+<img src="https://miro.medium.com/v2/resize:fit:420/1*N7tlxqOLXiPLy_yrb0q7-Q.png"/>
+
+Layers of hexagonal architecture:
+
+- Application: will contain the ports, which are interfaces that allow inbound or outbound flow.
+- Infrastructure: represents the outer part of the hexagonal architecture through adapters.
+- Domain: the center of the system. It handles the business logic and represents the application core.
+
+
+
 
 ## Build the JAR file for Docker
 
@@ -64,17 +80,3 @@ docker build -t my-spring-app-0.0.1-SNAPSHOT.jar
 ```
 docker run -p 8080:8080 my-spring-app-0.0.1-SNAPSHOT.jar
 ```
-
-## Explanation about hexagonal architecture API
-
-The main idea behind this architecture is to isolate domain logic from external components when designing software applications.
-
-We have the three layers: application, domain and infrastructure:
-
-<img src="https://miro.medium.com/v2/resize:fit:420/1*N7tlxqOLXiPLy_yrb0q7-Q.png"/>
-
-Layers of hexagonal architecture:
-
-- Application: will contain the ports, which are interfaces that allow inbound or outbound flow.
-- Infrastructure: represents the outer part of the hexagonal architecture through adapters.
-- Domain: the center of the system. It handles the business logic and represents the application core.
